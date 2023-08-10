@@ -1,4 +1,4 @@
-const card = (title, description, price, imagePath) => {
+const courseCard = (title, description, price, imagePath) => {
   const cardElement = document.createElement("div");
   cardElement.setAttribute("class", "card m-4");
   cardElement.style.width = "350px";
@@ -24,6 +24,28 @@ const card = (title, description, price, imagePath) => {
   return cardElement;
 };
 
+const feedbackCard = (name, feedback, imagePath) => {
+  const card = `<div  style="text-align:center;">
+            <img src="${
+              imagePath
+                ? imagePath.trim() == ""
+                  ? "./img/defaultUser.png"
+                  : imagePath
+                : "./img/defaultUser.png"
+            }" alt="Image">
+          </div>
+          <div >
+            <h5>${name}</h5>
+            <p>${feedback}</p>
+          </div>`;
+
+  const feedbackCard = document.createElement("div");
+  feedbackCard.setAttribute("class", "");
+  feedbackCard.innerHTML = card;
+
+  return feedbackCard;
+};
+
 const submitFeedback = () => {
   const name = document.getElementsByName("fullname")[0];
   const email = document.getElementsByName("email")[0];
@@ -35,17 +57,33 @@ const submitFeedback = () => {
 onload = () => {
   const courses = document.getElementById("courses");
   courses.appendChild(
-    card(
+    courseCard(
       "Test 1",
       "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas, aliquid! Porro voluptates",
       10
     )
   );
   courses.appendChild(
-    card(
+    courseCard(
       "Test 1",
       "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas, aliquid! Porro voluptates",
       10
+    )
+  );
+
+  const feedbacks = document.getElementById("feedbacks");
+
+  feedbacks.appendChild(
+    feedbackCard(
+      "Datta jadhav",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus a deleniti reiciendis. Laboriosam mollitia fugit delectus deserunt accusamus, labore quia magnam? Nobis, voluptas. Dolorum molestiae officiis qui eius, odio deserunt."
+    )
+  );
+
+  feedbacks.appendChild(
+    feedbackCard(
+      "Datta jadhav",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus a deleniti reiciendis. Laboriosam mollitia fugit delectus deserunt accusamus, labore quia magnam? Nobis, voluptas. Dolorum molestiae officiis qui eius, odio deserunt."
     )
   );
 };
