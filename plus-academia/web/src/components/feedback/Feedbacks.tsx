@@ -1,5 +1,5 @@
 function Feedbacks() {
-  return <div>Feedbacks</div>;
+  return <div className=""></div>;
 }
 
 export default Feedbacks;

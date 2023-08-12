@@ -7,8 +7,8 @@ import {
 } from "react-router-dom";
 import Content from "./components/content/Content";
 import Footer from "./components/footer/Footer";
-import NavBar from "./components/header/NavBar";
-import Home from "./components/content/Home";
+import Header from "./components/header/Header";
+import Home from "./components/home/Home";
 import Courses from "./components/courses/Courses";
 import Contact from "./components/contact/Contact";
 import About from "./components/about/About";
@@ -20,7 +20,7 @@ function App() {
   return (
     <>
       <Router>
-        <NavBar />
+        <Header />
         <Content>
           <Routes>
             <Route path="*" element={<Navigate to={"/"} />}></Route>

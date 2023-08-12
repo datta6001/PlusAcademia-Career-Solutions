@@ -159,69 +159,85 @@ $navBarHeight: 50px;
 .contact {
   width: 75%;
   margin: 1rem auto;
-  display: flex;
 
   h1 {
     text-align: center;
   }
 
-  .contact-form {
-    width: 60%;
+  .contact-container {
+    display: flex;
+    width: 100%;
 
-    form {
-      display: flex;
-      flex-direction: column;
-      height: 100%;
+    .contact-form {
+      width: 60%;
 
-      .form-control {
-        display: block;
-        width: 90%;
-        margin: 0 auto;
-        padding: 0.375rem 0.75rem;
-        font-size: 1rem;
-        line-height: 1.5;
-        color: #495057;
-        background-color: #fff;
-        background-clip: padding-box;
-        border: 1px solid #ced4da;
-        margin-top: 0.5rem;
-        border-radius: 0.25rem;
-        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+      form {
+        display: flex;
+        flex-direction: column;
+        height: $per-100;
+
+        .form-control {
+          display: block;
+          width: 90%;
+          margin: 0 auto;
+          padding: 0.375rem 0.75rem;
+          font-size: 1rem;
+          line-height: 1.5;
+          color: #495057;
+          background-color: #fff;
+          background-clip: padding-box;
+          border: 1px solid #ced4da;
+          margin-top: 0.5rem;
+          border-radius: 0.25rem;
+          transition: border-color 0.15s ease-in-out,
+            box-shadow 0.15s ease-in-out;
+        }
+
+        button {
+          margin-top: 10px;
+          height: 30px;
+          width: fit-content;
+          min-width: 100px;
+          font-size: medium;
+          font-weight: bold;
+          background: rgb(56, 203, 229);
+          border-radius: 5px;
+          align-self: center;
+        }
+      }
+    }
+
+    .contact-details {
+      width: 40%;
+      height: $per-100;
+      padding: 1rem 0;
+      margin-top: 0.5rem;
+      text-align: center;
+
+      p {
+        margin-top: 1rem;
       }
 
-      button {
-        margin-top: 10px;
-        height: 30px;
-        width: fit-content;
-        min-width: 100px;
-        font-size: medium;
-        font-weight: bold;
-        background: rgb(56, 203, 229);
-        border-radius: 5px;
-        align-self: center;
+      .social-sites {
+        margin: 0.6rem 0;
+
+        a {          
+          margin: 0 0.5rem;
+        }
       }
     }
   }
+}
 
-  .contact-details {
-    width: 40%;
-    height: 100%;
-    padding: 1rem 0;
-    margin-top: 0.5rem;
+.home {
+  display: flex;
+  height: $per-100;
+  width: $per-100;
+
+  h2 {
+    align-self: center;
+    margin: 0 auto;
     text-align: center;
-
-    p {
-      margin-top: 1rem;
-    }
-
-    .social-sites {
-      margin: 0.6rem 0;
-
-      a {
-        color: blue;
-        margin: 0 0.5rem;
-      }
-    }
   }
 }
 
@@ -285,15 +301,18 @@ $navBarHeight: 50px;
   }
 
   .contact {
-    width: 100%;
-    flex-direction: column;
+    width: $per-100;
 
-    .contact-form {
-      width: 100%;
-    }
+    .contact-container {
+      flex-direction: column;
 
-    .contact-details {
-      width: 100%;
+      .contact-form {
+        width: $per-100;
+      }
+
+      .contact-details {
+        width: $per-100;
+      }
     }
   }
 }
